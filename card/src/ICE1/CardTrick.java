@@ -16,7 +16,7 @@ package ICE1;
 
 
 import java.util.Random;
-import java.util.Scanner;
+
 
 
 public class CardTrick {
@@ -44,31 +44,27 @@ public class CardTrick {
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
         }
         
-        Scanner in = new Scanner(System.in);
-        System.out.print("Pick a Card value from 1-13. (1=Ace, Jack=11, Queen=12, King=13: ");
-        int value = in.nextInt();
-        System.out.print("Pick a suit (0=Hearts, 1=Diamonds, 2=Spades, 3=Clubs: ");
-        int suitInd = in.nextInt();
+        
+        
       
         //insert code to ask the user for Card value and suit, create their card
-        Card userCard = new Card();
-        userCard.setValue(value);
-        userCard.setSuit(Card.SUITS[suitInd]);
+       
         // and search magicHand here
          boolean found = false;
         for (int i = 0; i < magicHand.length; i++){
-            if (magicHand[i].getValue() == userCard.getValue() && magicHand[i].getSuit().equals(userCard.getSuit()) ){
+            if (magicHand[i].getValue() == luckyCard.getValue()
+                        && magicHand[i].getSuit().equals(luckyCard.getSuit()) ){
                 found = true;
                 break;
             }   
         }
         //Then report the result here
         if (found){
-            System.out.println("Your card is in the magic hand.");
+            System.out.println("You win! The lucky card is in the magic hand.");
     }
         else 
         {
-            System.out.println("Your card is not in the magic hand.");
+            System.out.println("You lose. The lucky card is not in the magic hand.");
         }
     }
 }
