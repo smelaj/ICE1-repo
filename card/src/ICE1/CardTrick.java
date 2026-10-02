@@ -24,6 +24,9 @@ public class CardTrick {
     public static void main(String[] args)
     {
         Card[] magicHand = new Card[7];
+        Card luckyCard = new Card();
+        luckyCard.setValue(5);
+        luckyCard.setSuit(Card.SUITS[3]);
         
         for (int i=0; i<magicHand.length; i++)
         {
@@ -35,9 +38,8 @@ public class CardTrick {
             c.setValue(randomValue);
             c.setSuit(Card.SUITS[rand.nextInt(4)]);
             magicHand[i] = c;
-            Card luckyCard = new Card();
-            luckyCard.setValue(5);
-            luckyCard.setSuit(Card.SUITS[3]);
+            
+            
             //c.setValue(insert call to random number generator here)
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
         }
